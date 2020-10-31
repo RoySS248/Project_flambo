@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 261.474, 15.214 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.4737, 151 )
+
+[node name="TestRoom" type="StaticBody2D"]
+
+[node name="Suelo" type="CollisionShape2D" parent="."]
+position = Vector2( 256, 273 )
+shape = SubResource( 1 )
+
+[node name="Pared" type="CollisionShape2D" parent="."]
+position = Vector2( -15, 144 )
+shape = SubResource( 2 )
+
+[node name="Pared2" type="CollisionShape2D" parent="."]
+position = Vector2( 527.89, 139.112 )
+shape = SubResource( 2 )
