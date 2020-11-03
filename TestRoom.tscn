@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 261.474, 15.214 )
@@ -19,3 +21,6 @@ shape = SubResource( 2 )
 [node name="Pared2" type="CollisionShape2D" parent="."]
 position = Vector2( 527.89, 139.112 )
 shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50.5108, 179.594 )
