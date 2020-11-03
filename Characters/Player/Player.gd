@@ -14,7 +14,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("M_right"):
-		$AnimationPlayer.play("Move_Right");
-		position.x+=speed;
+		MoveRight();
+	elif Input.is_action_pressed("M_left"):
+		MoveLeft();
 	else:
 		$AnimationPlayer.play("Idle_Right");
+
+
+func MoveRight():
+	$AnimationPlayer.play("Move_Right");
+	position.x+=speed;
+
+func MoveLeft():
+	$AnimationPlayer.play("Move_Left");
+	position.x-=speed;
