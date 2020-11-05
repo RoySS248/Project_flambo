@@ -2,11 +2,11 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-export (int) var speed = 30;
-export (float) var Gravity=100;
-var velocity=Vector2(0,0);
-var direccion=Vector2(0,0);
-var normal=Vector2(0,-1);
+export var speed = 45;
+export var gravity = 500;
+var velocity = Vector2(0,0);
+var direccion = Vector2(0,0);
+var normal = Vector2(0,-1);
 
 
 # Called when the node enters the scene tree for the first time.
@@ -44,7 +44,7 @@ func Move():
 	#position.x+=speed;
 
 func AplicarGravedad(delta):
-	velocity.y+=Gravity*delta;
+	velocity.y += gravity * delta;
 	move_and_slide(velocity,normal);
 	if is_on_floor():
 		velocity.y=0;
