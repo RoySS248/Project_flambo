@@ -8,7 +8,7 @@
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.2535, 22.0179 )
+extents = Vector2( 10.7762, 13.0129 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 143.451, 181.621 )
@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 [node name="Position2D" type="Position2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Position2D"]
-position = Vector2( -16, -24 )
+position = Vector2( -15.451, -29.621 )
 texture = ExtResource( 1 )
 centered = false
 vframes = 6
