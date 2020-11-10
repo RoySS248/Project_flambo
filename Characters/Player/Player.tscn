@@ -18,9 +18,11 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="."]
+modulate = Color( 1, 1, 1, 0.372549 )
 
 [node name="Smoke" parent="Position2D" instance=ExtResource( 7 )]
 position = Vector2( -1.6856, -22.2179 )
+lifetime = 0.8
 linear_accel = 15.0
 tangential_accel = 8.0
 hue_variation = 0.05
