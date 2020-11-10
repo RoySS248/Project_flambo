@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Characters/Player/Assets/Sprite/Flambo.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Player/Animations/Idle_Right.anim" type="Animation" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Characters/Player/Animations/Move_Left.anim" type="Animation" id=4]
 [ext_resource path="res://Characters/Player/Animations/Idle_Left.anim" type="Animation" id=5]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=6]
+[ext_resource path="res://Characters/Player/Assets/Particles/Smoke.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.74403, 13.0129 )
@@ -18,13 +19,19 @@ __meta__ = {
 
 [node name="Position2D" type="Position2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Position2D"]
+[node name="Smoke" parent="Position2D" instance=ExtResource( 7 )]
+position = Vector2( -1.6856, -22.2179 )
+linear_accel = 15.0
+tangential_accel = 8.0
+hue_variation = 0.05
+
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -15.451, -29.621 )
 texture = ExtResource( 1 )
 centered = false
 vframes = 6
 hframes = 8
-frame = 16
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle_Left = ExtResource( 5 )
@@ -33,5 +40,6 @@ anims/Move_Left = ExtResource( 4 )
 anims/Move_Right = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.117981, 4.293 )
 shape = SubResource( 1 )

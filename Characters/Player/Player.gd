@@ -21,7 +21,7 @@ func _process(delta):
 func _input(delta):
 	direccion.x=int(Input.is_action_pressed("M_right"))-int(Input.is_action_pressed("M_left"));
 	if direccion.x != 0:
-		#$Position2D.scale=Vector2(direccion.x,1);
+		$Position2D.scale=Vector2(direccion.x,1);
 		if direccion.x == 1:
 			State=1;
 			$AnimationPlayer.play("Move_Right");
