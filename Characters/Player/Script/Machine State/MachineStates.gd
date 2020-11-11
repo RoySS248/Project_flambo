@@ -19,7 +19,7 @@ func initialize():
 
 
 func change_state(newState:String):
-	if currentSate in [ "Idle","Jump", "Attack"]:
+	if newState in [ "Idle","Jump", "Attack"]:
 		owner.cancel_velocity();
 	
 	currentSate = newState;
@@ -31,4 +31,5 @@ func _input(event):
 
 
 func _physics_process(delta):
+	states[currentSate].update(delta);
 	owner.get_node("LabelState").text = str(currentSate);

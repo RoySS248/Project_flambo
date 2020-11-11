@@ -5,10 +5,16 @@ const GRAVITY : int = 500;
 var velocity : Vector2 = Vector2.ZERO;
 var direction : Vector2 = Vector2.ZERO;
 var normalFloor : Vector2 = Vector2(0,-1);
+var viewDirection : String = "right";
 
 
 func _input(event):
-	direction.x = int(event.is_action_pressed("ui_right")) - int(event.is_action_pressed("ui_left"));
+	if Input.is_action_pressed("ui_right"):
+		viewDirection = "right";
+	elif Input.is_action_pressed("ui_left"):
+		viewDirection = "left";
+	
+	direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"));
 	
 	if direction.x !=0:
 		$PositionPlayer.scale = Vector2(direction.x, 1);
