@@ -1,22 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Player/Assets/Sprite/Flambo.png" type="Texture" id=1]
-[ext_resource path="res://Characters/Player/Animations/Idle_Right.anim" type="Animation" id=2]
-[ext_resource path="res://Characters/Player/Animations/Move_Right.anim" type="Animation" id=3]
-[ext_resource path="res://Characters/Player/Animations/Move_Left.anim" type="Animation" id=4]
-[ext_resource path="res://Characters/Player/Animations/Idle_Left.anim" type="Animation" id=5]
+[ext_resource path="res://Characters/Player/Assets/Animations/Idle_Left.anim" type="Animation" id=2]
+[ext_resource path="res://Characters/Player/Assets/Animations/Move_Right.anim" type="Animation" id=3]
+[ext_resource path="res://Characters/Player/Assets/Animations/Move_Left.anim" type="Animation" id=4]
+[ext_resource path="res://Characters/Player/Assets/Animations/Idle_Right.anim" type="Animation" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.35617, 13.3401 )
 
 [node name="Player" type="KinematicBody2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="PositionPlayer" type="Position2D" parent="."]
+
+[node name="SpritePlayer" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-centered = false
 vframes = 6
 hframes = 8
-frame = 8
+
+[node name="CollisionPlayer" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9.94929 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle_Left = ExtResource( 5 )
-anims/Idle_Right = ExtResource( 2 )
+anims/Idle_Left = ExtResource( 2 )
+anims/Idle_Right = ExtResource( 5 )
 anims/Move_Left = ExtResource( 4 )
 anims/Move_Right = ExtResource( 3 )
