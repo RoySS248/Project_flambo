@@ -23,3 +23,6 @@ func apply_gravity(delta):
 	
 	if is_on_floor():
 		velocity.y = 0;
+
+func cancel_velocity():
+	velocity = Vector2.ZERO;
