@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const SPEED : int = 45;
 const GRAVITY : int = 500;
+const JUMP_SPEED : int = 200;
 var velocity : Vector2 = Vector2.ZERO;
 var direction : Vector2 = Vector2.ZERO;
 var normalFloor : Vector2 = Vector2(0,-1);

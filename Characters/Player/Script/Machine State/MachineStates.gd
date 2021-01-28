@@ -7,7 +7,9 @@ const initialState = "Idle";
 func _ready():
 	states = {
 		"Idle": $Idle,
-		"Move": $Move
+		"Move": $Move,
+		"Jump": $Jump,
+		"Fall": $Fall
 	};
 
 	initialize();
@@ -19,7 +21,7 @@ func initialize():
 
 
 func change_state(newState:String):
-	if newState in [ "Idle","Jump", "Attack"]:
+	if newState in [ "Idle","Jump", "Attack","Fall"]:
 		owner.cancel_velocity();
 	
 	currentSate = newState;

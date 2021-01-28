@@ -5,18 +5,15 @@ signal finished_state(newState);
 
 func start():
 	if owner.viewDirection == "left":
-		owner.get_node("AnimationPlayer").play("Move_Left");
+		owner.get_node("AnimationPlayer").play("Idle_Left");#Fall_Left
 	elif owner.viewDirection == "right":
-		owner.get_node("AnimationPlayer").play("Move_Right");
-
+		owner.get_node("AnimationPlayer").play("Idle_Right");#Fall_Right
 
 func manager_input(event):
-	if Input.is_action_pressed("ui_jump"):
-		emit_signal("finished_state", "Jump");
-
+	pass;
 
 func update(delta):
-	if owner.direction.x == 0:
+	if owner.is_on_floor():
 		emit_signal("finished_state", "Idle");
 	
 	if owner.direction.x:

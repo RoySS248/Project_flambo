@@ -3,7 +3,7 @@
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 261.474, 15.214 )
+extents = Vector2( 301.981, 15.214 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.4737, 151 )
@@ -14,12 +14,96 @@ extents = Vector2( 16.4737, 151 )
 position = Vector2( 256, 273 )
 shape = SubResource( 1 )
 
-[node name="Pared" type="CollisionShape2D" parent="."]
+[node name="Suelo2" type="CollisionShape2D" parent="."]
+position = Vector2( 752, 409 )
+shape = SubResource( 1 )
+
+[node name="Suelo3" type="CollisionShape2D" parent="."]
+position = Vector2( 1248, 93 )
+shape = SubResource( 1 )
+
+[node name="Suelo4" type="CollisionShape2D" parent="."]
+position = Vector2( 1918.28, 269.389 )
+shape = SubResource( 1 )
+
+[node name="Pared1" type="CollisionShape2D" parent="."]
 position = Vector2( -15, 144 )
 shape = SubResource( 2 )
 
 [node name="Pared2" type="CollisionShape2D" parent="."]
-position = Vector2( 527.89, 139.112 )
+position = Vector2( 2175.66, 139.112 )
+shape = SubResource( 2 )
+
+[node name="Pared3" type="CollisionShape2D" parent="."]
+position = Vector2( 574.642, 422.058 )
+shape = SubResource( 2 )
+
+[node name="Pared17" type="CollisionShape2D" parent="."]
+position = Vector2( 605.824, 475.512 )
+shape = SubResource( 2 )
+
+[node name="Pared4" type="CollisionShape2D" parent="."]
+position = Vector2( 969.24, 247.055 )
+shape = SubResource( 2 )
+
+[node name="Pared18" type="CollisionShape2D" parent="."]
+position = Vector2( 1242.18, 187.658 )
+shape = SubResource( 2 )
+
+[node name="Pared19" type="CollisionShape2D" parent="."]
+position = Vector2( 1443, 167.859 )
+shape = SubResource( 2 )
+
+[node name="Pared20" type="CollisionShape2D" parent="."]
+position = Vector2( 1096.52, 201.8 )
+shape = SubResource( 2 )
+
+[node name="Pared5" type="CollisionShape2D" parent="."]
+position = Vector2( 1528, 240.706 )
+shape = SubResource( 2 )
+
+[node name="Pared6" type="CollisionShape2D" parent="."]
+position = Vector2( 1558.82, 295.926 )
+shape = SubResource( 2 )
+
+[node name="Pared7" type="CollisionShape2D" parent="."]
+position = Vector2( 1584.36, 332.174 )
+shape = SubResource( 2 )
+
+[node name="Pared8" type="CollisionShape2D" parent="."]
+position = Vector2( 1614.11, 374.498 )
+shape = SubResource( 2 )
+
+[node name="Pared9" type="CollisionShape2D" parent="."]
+position = Vector2( 184.093, 361.029 )
+shape = SubResource( 2 )
+
+[node name="Pared10" type="CollisionShape2D" parent="."]
+position = Vector2( 316.544, 358.784 )
+shape = SubResource( 2 )
+
+[node name="Pared11" type="CollisionShape2D" parent="."]
+position = Vector2( 350.218, 325.11 )
+shape = SubResource( 2 )
+
+[node name="Pared12" type="CollisionShape2D" parent="."]
+position = Vector2( 541.036, 363.274 )
+shape = SubResource( 2 )
+
+[node name="Pared13" type="CollisionShape2D" parent="."]
+position = Vector2( 875.53, 430.622 )
+shape = SubResource( 2 )
+
+[node name="Pared16" type="CollisionShape2D" parent="."]
+position = Vector2( 845.223, 471.03 )
+shape = SubResource( 2 )
+
+[node name="Pared14" type="CollisionShape2D" parent="."]
+position = Vector2( 906.958, 372.254 )
+shape = SubResource( 2 )
+
+[node name="Pared15" type="CollisionShape2D" parent="."]
+position = Vector2( 936.143, 301.539 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
