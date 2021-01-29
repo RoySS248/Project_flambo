@@ -12,19 +12,22 @@ func start():
 	owner.velocity.y = -owner.JUMP_SPEED;
 	owner.move_and_slide(owner.velocity, owner.normalFloor);
 
+
 func manager_input(event):
-	pass;
+	if Input.is_action_just_pressed("ui_attack"):
+		emit_signal("finished_state", "AttackJump");
+
 
 func update(delta):
-	print(owner.velocity.y);
 	if owner.velocity.y >= 0:
 		emit_signal("finished_state", "Fall");
-
+	
 	if owner.is_on_floor():
 		emit_signal("finished_state", "Idle");
 		return;
-
+	
 	move(owner.SPEED,owner.direction);
+
 
 func move(speed, direction):
 	owner.velocity.x = direction.x * speed;

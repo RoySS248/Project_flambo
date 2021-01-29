@@ -9,7 +9,9 @@ func _ready():
 		"Idle": $Idle,
 		"Move": $Move,
 		"Jump": $Jump,
-		"Fall": $Fall
+		"Fall": $Fall,
+		"Attack": $Attack,
+		"AttackJump": $AttackJump
 	};
 
 	initialize();

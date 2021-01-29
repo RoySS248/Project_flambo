@@ -11,8 +11,11 @@ func start():
 
 
 func manager_input(event):
-	if Input.is_action_pressed("ui_jump"):
+	if Input.is_action_just_pressed("ui_jump"):
 		emit_signal("finished_state", "Jump");
+		
+	if Input.is_action_just_pressed("ui_attack"):
+		emit_signal("finished_state", "Attack");
 
 
 func update(delta):

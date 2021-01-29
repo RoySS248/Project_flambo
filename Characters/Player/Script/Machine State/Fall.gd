@@ -10,7 +10,8 @@ func start():
 		owner.get_node("AnimationPlayer").play("Idle_Right");#Fall_Right
 
 func manager_input(event):
-	pass;
+	if Input.is_action_just_pressed("ui_attack"):
+		emit_signal("finished_state", "AttackJump");
 
 func update(delta):
 	if owner.is_on_floor():
