@@ -4,9 +4,13 @@ signal finished_state(newState);
 
 
 func start():
-	if owner.viewDirection == "left":
+	manager_animation();
+
+
+func manager_animation():
+	if owner.direction.x == -1:
 		owner.get_node("AnimationPlayer").play("Move_Left");
-	elif owner.viewDirection == "right":
+	elif owner.direction.x == 1:
 		owner.get_node("AnimationPlayer").play("Move_Right");
 
 
@@ -22,6 +26,7 @@ func manager_input(event):
 
 
 func update(delta):
+	manager_animation();
 	if owner.direction.x == 0:
 		emit_signal("finished_state", "Idle");
 	

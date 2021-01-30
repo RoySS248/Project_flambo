@@ -37,6 +37,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		return;
 	
 	if anim_name == "Attack1" || anim_name == "Attack2":
-		hit_count = 0
-		hit = false
+		hit_count = 0;
+		hit = false;
 		emit_signal("finished_state","Idle");

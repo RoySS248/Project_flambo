@@ -4,6 +4,10 @@ signal finished_state(newState);
 
 
 func start():
+	manager_animation();
+
+
+func manager_animation():
 	if owner.viewDirection == "left":
 		owner.get_node("AnimationPlayer").play("Idle_Left");
 	elif owner.viewDirection == "right":

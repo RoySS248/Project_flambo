@@ -10,26 +10,31 @@ var viewDirection : String = "right";
 var inGround : bool = false;
 var canMove : bool = true;
 var canFall : bool = true;
+var controlSpriteDirection : bool = true;
 
 
 func _input(event):
 	if canMove:
-		if Input.is_action_pressed("ui_right"):
-			viewDirection = "right";
-		elif Input.is_action_pressed("ui_left"):
-			viewDirection = "left";
-	
+		
 		direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"));
-	
-		if direction.x !=0:
-			$PositionPlayer.scale = Vector2(direction.x, 1);
+		
+		if controlSpriteDirection:
+			
+			if Input.is_action_pressed("ui_right"):
+				viewDirection = "right";
+			elif Input.is_action_pressed("ui_left"):
+				viewDirection = "left";
+			
+			if direction.x !=0:
+				$PositionPlayer.scale = Vector2(direction.x, 1);
 	else:
 		direction.x = 0;
 
 func _physics_process(delta):
 	if canFall:
 		apply_gravity(delta)
-	var inGround = $PlattformDetector.is_colliding();
+	inGround = $PlattformDetector.is_colliding();
+	
 
  
 func apply_gravity(delta):

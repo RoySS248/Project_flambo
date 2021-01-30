@@ -9,7 +9,7 @@ var damage: int = 2;
 
 
 func start():
-	owner.canMove = false;
+	owner.controlSpriteDirection = false;
 	owner.get_node("AnimationPlayer").play("SpecialFlame");#SpecialFlame
 	posFlame.add_child(flame.instance());
 
@@ -26,5 +26,5 @@ func manager_input(event):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "SpecialFlame":#SpecialFlame
 		posFlame.get_child(0).queue_free();
-		owner.canMove = true;
+		owner.controlSpriteDirection = true;
 		emit_signal("finished_state","Idle");

@@ -4,13 +4,16 @@ signal finished_state(newState);
 
 
 func start():
-	if owner.viewDirection == "left":
-		owner.get_node("AnimationPlayer").play("Idle_Left");#Jump_Left
-	elif owner.viewDirection == "right":
-		owner.get_node("AnimationPlayer").play("Idle_Right");#Jump_Right
-	
+	manager_animation();
 	owner.velocity.y = -owner.JUMP_SPEED;
 	owner.move_and_slide(owner.velocity, owner.normalFloor);
+
+
+func manager_animation():
+	if owner.viewDirection == "left":
+		owner.get_node("AnimationPlayer").play("Idle_Left");
+	elif owner.viewDirection == "right":
+		owner.get_node("AnimationPlayer").play("Idle_Right");
 
 
 func manager_input(event):
@@ -19,6 +22,8 @@ func manager_input(event):
 
 
 func update(delta):
+	
+	manager_animation();
 	if owner.velocity.y >= 0:
 		emit_signal("finished_state", "Fall");
 	

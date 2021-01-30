@@ -161,7 +161,6 @@ position = Vector2( 15.3464, 12.6134 )
 
 [node name="CollisionAttack" type="CollisionShape2D" parent="PositionPlayer/AreaAttack"]
 shape = SubResource( 1 )
-disabled = true
 
 [node name="Smoke" parent="PositionPlayer" instance=ExtResource( 14 )]
 position = Vector2( -2.77528, -8.91309 )
@@ -176,7 +175,6 @@ position = Vector2( -2.00452, -7.79536 )
 texture = ExtResource( 1 )
 vframes = 6
 hframes = 8
-frame = 1
 
 [node name="SpriteProto" type="Sprite" parent="."]
 visible = false
@@ -244,9 +242,9 @@ script = ExtResource( 15 )
 
 [node name="SpecialFlame" type="Node" parent="MachineStates"]
 script = ExtResource( 16 )
-[connection signal="animation_finished" from="AnimationPlayer" to="MachineStates/AttackJump" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="MachineStates/SpecialFlame" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="MachineStates/Attack" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="MachineStates/SpecialFlame" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="MachineStates/AttackJump" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="finished_state" from="MachineStates/Idle" to="MachineStates" method="change_state"]
 [connection signal="finished_state" from="MachineStates/Move" to="MachineStates" method="change_state"]
 [connection signal="finished_state" from="MachineStates/Jump" to="MachineStates" method="change_state"]
