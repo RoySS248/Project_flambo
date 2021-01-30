@@ -14,7 +14,7 @@ func manager_input(event):
 		emit_signal("finished_state", "AttackJump");
 
 func update(delta):
-	if owner.is_on_floor():
+	if owner.is_on_floor() || owner.inGround:
 		emit_signal("finished_state", "Idle");
 	
 	if owner.direction.x:

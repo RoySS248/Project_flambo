@@ -7,6 +7,7 @@ var damage: int = 1;
 var hit_count: int = 0;
 var max_hit: int = 3;
 
+
 func start():
 	attack();
 

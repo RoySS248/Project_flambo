@@ -17,6 +17,9 @@ func manager_input(event):
 	if Input.is_action_just_pressed("ui_attack"):
 		emit_signal("finished_state", "Attack");
 
+	if Input.is_action_just_pressed("ui_special"):
+		emit_signal("finished_state", "SpecialFlame")
+
 
 func update(delta):
 	if owner.direction.x == 0:

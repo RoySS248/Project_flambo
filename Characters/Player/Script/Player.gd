@@ -7,21 +7,29 @@ var velocity : Vector2 = Vector2.ZERO;
 var direction : Vector2 = Vector2.ZERO;
 var normalFloor : Vector2 = Vector2(0,-1);
 var viewDirection : String = "right";
+var inGround : bool = false;
+var canMove : bool = true;
+var canFall : bool = true;
 
 
 func _input(event):
-	if Input.is_action_pressed("ui_right"):
-		viewDirection = "right";
-	elif Input.is_action_pressed("ui_left"):
-		viewDirection = "left";
+	if canMove:
+		if Input.is_action_pressed("ui_right"):
+			viewDirection = "right";
+		elif Input.is_action_pressed("ui_left"):
+			viewDirection = "left";
 	
-	direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"));
+		direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"));
 	
-	if direction.x !=0:
-		$PositionPlayer.scale = Vector2(direction.x, 1);
+		if direction.x !=0:
+			$PositionPlayer.scale = Vector2(direction.x, 1);
+	else:
+		direction.x = 0;
 
 func _physics_process(delta):
-	apply_gravity(delta)
+	if canFall:
+		apply_gravity(delta)
+	var inGround = $PlattformDetector.is_colliding();
 
  
 func apply_gravity(delta):
