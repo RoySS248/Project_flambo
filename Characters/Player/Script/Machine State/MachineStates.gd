@@ -12,7 +12,8 @@ func _ready():
 		"Fall": $Fall,
 		"Attack": $Attack,
 		"AttackJump": $AttackJump,
-		"SpecialFlame": $SpecialFlame
+		"SpecialFlame": $SpecialFlame,
+		"SpecialCatapult": $SpecialCatapult
 	};
 
 	initialize();

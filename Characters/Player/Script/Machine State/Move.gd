@@ -27,6 +27,9 @@ func manager_input(event):
 
 func update(delta):
 	manager_animation();
+	if owner.velocity.y > 0 && !owner.inGround:
+		emit_signal("finished_state", "Fall");
+	
 	if owner.direction.x == 0:
 		emit_signal("finished_state", "Idle");
 	

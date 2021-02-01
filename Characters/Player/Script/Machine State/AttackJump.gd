@@ -6,7 +6,18 @@ var damage: int = 1;
 
 
 func start():
-	owner.get_node("AnimationPlayer").play("Attack2");
+	manager_animation();
+
+
+func manager_animation():
+	owner.controlSpriteDirection = false;
+	if owner.viewDirection == "left":
+		owner.get_node("AnimationPlayer").play("Attack_2_Left");
+
+	elif owner.viewDirection == "right":
+		owner.get_node("AnimationPlayer").play("Attack_2_Right");
+
+
 
 func update(delta):
 	move(owner.SPEED, owner.direction);
@@ -23,5 +34,6 @@ func manager_input(event):
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Attack1" || anim_name == "Attack2":
+	if anim_name == "Attack_1_Right" || anim_name == "Attack_2_Right" || anim_name == "Attack_1_Left" || anim_name == "Attack_2_Left":
+		owner.controlSpriteDirection = true;
 		emit_signal("finished_state","Fall");

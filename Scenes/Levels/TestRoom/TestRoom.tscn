@@ -34,6 +34,13 @@ shape = SubResource( 1 )
 position = Vector2( 1918.28, 269.389 )
 shape = SubResource( 1 )
 
+[node name="Suelo5" type="CollisionShape2D" parent="." groups=[
+"Ground",
+]]
+position = Vector2( 1918.28, 269.389 )
+rotation = -0.349066
+shape = SubResource( 1 )
+
 [node name="Pared1" type="CollisionShape2D" parent="."]
 position = Vector2( -15, 144 )
 shape = SubResource( 2 )

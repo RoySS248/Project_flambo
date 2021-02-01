@@ -22,12 +22,19 @@ func manager_input(event):
 		emit_signal("finished_state", "Attack");
 	
 	if Input.is_action_just_pressed("ui_special"):
-		emit_signal("finished_state", "SpecialFlame");
+	
+		if Input.is_action_pressed("ui_up"):
+			emit_signal("finished_state", "SpecialCatapult");
+		else: 
+			emit_signal("finished_state", "SpecialFlame");
 
 
 func update(delta):
 	owner.velocity.x = 0;
 	owner.move_and_slide(owner.velocity, owner.normalFloor);
+	
+	if owner.velocity.y > 0 && !owner.inGround:
+		emit_signal("finished_state", "Fall");
 	
 	if owner.is_on_floor() || owner.inGround:
 		if owner.direction.x:

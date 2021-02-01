@@ -10,9 +10,9 @@ func start():
 
 func manager_animation():
 	if owner.viewDirection == "left":
-		owner.get_node("AnimationPlayer").play("Move_Left");
+		owner.get_node("AnimationPlayer").play("Fall_Left");
 	elif owner.viewDirection == "right":
-		owner.get_node("AnimationPlayer").play("Move_Right");
+		owner.get_node("AnimationPlayer").play("Fall_Right");
 
 
 func manager_input(event):

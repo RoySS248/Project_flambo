@@ -23,11 +23,21 @@ func update(delta):
 
 func attack():
 	if hit_count == 0 || hit_count == 1:
-		owner.get_node("AnimationPlayer").play("Attack1");
+		manager_animation("Attack_1_");
 	elif hit_count == 2 || hit_count == 3:
-		owner.get_node("AnimationPlayer").play("Attack2");
+		manager_animation("Attack_2_");
 		
 	hit = false;
+
+
+func manager_animation(anim : String):
+	owner.controlSpriteDirection = false;
+	if owner.viewDirection == "left":
+		owner.get_node("AnimationPlayer").play(str(anim) + "Left");
+
+	elif owner.viewDirection == "right":
+		owner.get_node("AnimationPlayer").play(str(anim) + "Right");
+
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -36,7 +46,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		attack();
 		return;
 	
-	if anim_name == "Attack1" || anim_name == "Attack2":
+	if anim_name == "Attack_1_Right" || anim_name == "Attack_2_Right" || anim_name == "Attack_1_Left" || anim_name == "Attack_2_Left":
 		hit_count = 0;
 		hit = false;
+		owner.controlSpriteDirection = true;
 		emit_signal("finished_state","Idle");
